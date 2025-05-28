@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>ReparatuCarro.com - Próximamente | Servicios Automotrices en Venezuela</title>
+    <meta name="description" content="ReparatuCarro.com - La plataforma líder para conectar usuarios con talleres mecánicos y servicios automotrices en Venezuela. Próximamente disponible." />
+    <meta name="keywords" content="reparación autos venezuela, talleres mecánicos, servicios automotrices, mantenimiento vehicular, repuestos venezuela" />
+    <meta name="author" content="Daniel Alejandro Ruiz Poli" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://reparatucarro.com/" />
+    <meta property="og:title" content="ReparatuCarro.com - Servicios Automotrices en Venezuela" />
+    <meta property="og:description" content="La plataforma líder para conectar usuarios con talleres mecánicos y servicios automotrices en Venezuela. Próximamente disponible." />
+    <meta property="og:image" content="/public/img/common/reparatucarro_logo.png" />
+    <meta property="og:locale" content="es_VE" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://reparatucarro.com/" />
+    <meta property="twitter:title" content="ReparatuCarro.com - Servicios Automotrices en Venezuela" />
+    <meta property="twitter:description" content="La plataforma líder para conectar usuarios con talleres mecánicos y servicios automotrices en Venezuela. Próximamente disponible." />
+    <meta property="twitter:image" content="/public/img/common/reparatucarro_logo.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/public/img/common/reparatucarro_logo.svg" />
+    <link rel="apple-touch-icon" href="/public/img/common/reparatucarro_logo.png" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/public/video/intro.mp4" as="video" type="video/mp4" />
+    <link rel="preload" href="/public/img/common/reparatucarro_logo.svg" as="image" />
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#e74c3c" />
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body, html {
+        height: 100%;
+        font-family: 'Roboto', Arial, sans-serif;
+        overflow-x: hidden;
+        background-color: #1a1a1a;
+      }
+      
+      #bg-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1000;
+        background-size: cover;
+        object-fit: cover;
+      }
+      
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(31, 29, 12, 0.432);
+        z-index: -990;
+      }
+      
+      .page-wrapper {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: 1;
+        padding-top: 0;
+      }
+      
+      /* Contenedor principal centrado */
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      
+      .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin-top: 10px;
+      }
+      
+      .header__container {
+        width: 100%;
+        max-width: 600px;
+        background-color: rgba(252, 238, 238, 0.767);
+        padding: 1.5rem 2rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        backdrop-filter: blur(5px);
+      }
+      
+      .header__logo {
+        max-width: 450px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 0.5rem;
+        position: relative;
+        top: -60px;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+      }
+      
+      .header__content {
+        width: 100%;
+        text-align: center;
+        margin-top: -15px;
+      }
+      
+      .header__title {
+        width: 100%;
+        font-size: 2.5rem;
+        color: #4d2f03;
+        margin-bottom: 10px;
+        position: relative;
+        top: -120px;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.5);
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      
+      .header__text {
+        width: 100%;
+        text-align: center;
+        margin-top: -90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .header__text p {
+        width: 100%;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        text-align: center;
+        margin: 5px 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35), 0 0 8px rgba(255, 255, 255, 0.3);
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+      
+      .footer {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        background-color: rgba(66, 63, 63, 0.85);
+        margin-top: auto;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3px);
+      }
+      
+      .footer__text {
+        font-size: 0.9rem;
+        color: #e4dada;
+        text-align: center;
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Loading spinner para el video */
+      .video-loading {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -999;
+        color: #e74c3c;
+        font-size: 1.2rem;
+      }
+      
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .header__title {
+          font-size: 2rem;
+        }
+        
+        .header__text p {
+          font-size: 1rem;
+        }
+        
+        .header__logo {
+          max-width: 350px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .header__title {
+          font-size: 1.8rem;
+        }
+        
+        .header__container {
+          padding: 1rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading indicator -->
+    <div class="video-loading" id="videoLoading">Cargando...</div>
+    
+    <!-- Video de fondo -->
+    <video id="bg-video" autoplay muted loop playsinline preload="metadata">
+      <source src="/public/video/intro.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+    
+    <!-- Overlay para mejorar la legibilidad -->
+    <div class="overlay"></div>
+    
+    <!-- Contenido principal -->
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="header__container">
+          <img class="header__logo" src="/public/img/common/reparatucarro_logo.svg" alt="ReparatuCarro.com - Logo" loading="eager">
+          <div class="header__content">
+            <h1 class="header__title">¡Próximamente!</h1>
+            <div class="header__text">
+              <p>Estamos trabajando para ofrecerte la mejor experiencia en servicios automotrices.</p>
+              <p>¡Pronto estaremos en línea!</p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <footer class="footer">
+        <p class="footer__text">© 2024 ReparatuCarro.com - Todos los derechos reservados</p>
+      </footer>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('bg-video');
+        const loading = document.getElementById('videoLoading');
+        
+        // Ocultar loading cuando el video esté listo
+        video.addEventListener('loadeddata', function() {
+          loading.style.display = 'none';
+        });
+        
+        // Intentar reproducir el video cuando se carguen los metadatos
+        video.addEventListener('loadedmetadata', function() {
+          video.play().catch(function(error) {
+            console.error('Error al reproducir el video:', error);
+            loading.textContent = 'Video no disponible';
+          });
+        });
+        
+        // También intentar reproducir al interactuar con la página
+        document.addEventListener('click', function() {
+          video.play().catch(function(error) {
+            console.error('Error al reproducir el video después de interacción:', error);
+          });
+        }, { once: true });
+        
+        // Manejar errores del video
+        video.addEventListener('error', function() {
+          loading.textContent = 'Error cargando video';
+          console.error('Error al cargar el video');
+        });
+      });
+    </script>
+  </body>
+</html>

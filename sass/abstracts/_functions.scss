@@ -1,0 +1,59 @@
+// Funciones SASS para ReparatuCarro.com
+
+// Convierte píxeles a rem
+@function rem($pixels, $context: 16) {
+  @return ($pixels / $context) * 1rem;
+}
+
+// Convierte píxeles a em
+@function em($pixels, $context: 16) {
+  @return ($pixels / $context) * 1em;
+}
+
+// Función para obtener un color con transparencia
+@function rgba-color($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// Función para hacer un color más oscuro
+@function darken-color($color, $percentage) {
+  @return darken($color, $percentage);
+}
+
+// Función para hacer un color más claro
+@function lighten-color($color, $percentage) {
+  @return lighten($color, $percentage);
+}
+
+// Función para ajustar el color (mezclar con otro)
+@function color-mix($color1, $color2, $weight: 50%) {
+  @return mix($color1, $color2, $weight);
+}
+
+// Función para calcular z-index basado en capas predefinidas
+@function z-index($layer) {
+  $layers: (
+    "modal": 9000,
+    "overlay": 8000,
+    "dropdown": 7000,
+    "header": 6000,
+    "footer": 5000,
+    "default": 1
+  );
+  
+  @if map-has-key($layers, $layer) {
+    @return map-get($layers, $layer);
+  } @else {
+    @warn "No se ha encontrado '#{$layer}' en las capas de z-index.";
+    @return 1;
+  }
+}
+
+// Función para calcular el ancho de una columna en un grid
+@function grid-column-width($columns, $total-columns: 12, $gap: 30px) {
+  $grid-width: 100%;
+  $total-gap-width: ($total-columns - 1) * $gap;
+  $column-width: ($grid-width - $total-gap-width) / $total-columns;
+  
+  @return $column-width * $columns + ($columns - 1) * $gap;
+}

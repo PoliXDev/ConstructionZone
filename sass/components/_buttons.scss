@@ -1,0 +1,146 @@
+// Estilos de botones para ReparatuCarro.com
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Botón base
+.btn {
+  @include button-style;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $border-width solid transparent;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  border-radius: $border-radius;
+  transition: $transition-base;
+  
+  // Evitar selección del texto
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  
+  &:focus, &.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+  }
+  
+  &:disabled, &.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+  
+  // Para íconos dentro de botones
+  i, .icon {
+    margin-right: $spacing-xs;
+    
+    &:only-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// Variantes de color
+.btn-primary {
+  @include button-style($primary-color, $light);
+}
+
+.btn-secondary {
+  @include button-style($secondary-color, $dark);
+}
+
+.btn-tertiary {
+  @include button-style($tertiary-color, $light);
+}
+
+.btn-success {
+  @include button-style($success, $light);
+}
+
+.btn-danger {
+  @include button-style($danger, $light);
+}
+
+.btn-warning {
+  @include button-style($warning, $dark);
+}
+
+.btn-info {
+  @include button-style($info, $light);
+}
+
+.btn-light {
+  @include button-style($light, $dark);
+}
+
+.btn-dark {
+  @include button-style($dark, $light);
+}
+
+// Botón outline
+.btn-outline-primary {
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  background-color: transparent;
+  
+  &:hover, &:focus {
+    color: $light;
+    background-color: $primary-color;
+  }
+}
+
+// Más variantes outline siguiendo el mismo patrón...
+
+// Tamaños de botón
+.btn-sm {
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-sm;
+  border-radius: $border-radius / 1.2;
+}
+
+.btn-lg {
+  padding: $spacing-md $spacing-xl;
+  font-size: $font-size-lg;
+  border-radius: $border-radius * 1.2;
+}
+
+// Botón de bloque (ancho completo)
+.btn-block {
+  display: block;
+  width: 100%;
+  
+  + .btn-block {
+    margin-top: $spacing-sm;
+  }
+}
+
+// Grupo de botones
+.btn-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  
+  .btn {
+    position: relative;
+    flex: 1 1 auto;
+    
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    
+    &:hover {
+      z-index: 1;
+    }
+  }
+}

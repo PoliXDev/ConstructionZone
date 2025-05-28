@@ -1,0 +1,32 @@
+// Arquitectura 7-1 SASS
+
+// 1. Abstracts (variables, mixins, funciones)
+@use './abstracts/variables';
+@use './abstracts/mixins';
+@use './abstracts/functions';
+
+// 2. Base (estilos base, reset, tipografía)
+@use './base/reset';
+@use './base/typography';
+
+// 3. Componentes (botones, formularios, tarjetas, etc)
+@use './components/buttons';
+@use './components/forms';
+@use './components/cards';
+@use './components/navigation';
+
+// 4. Layout (header, footer, grid, etc)
+@use './layout/header';
+@use './layout/footer';
+@use './layout/grid';
+
+// 5. Pages (estilos específicos por página)
+@use './pages/home';
+@use './pages/dashboard';
+@use './pages/services';
+
+// 6. Themes (temas: claro, oscuro, etc)
+@use './themes/default';
+
+// 7. Vendors (estilos de terceros)
+// @use './vendors/bootstrap';

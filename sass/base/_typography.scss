@@ -1,0 +1,191 @@
+// Tipografía para ReparatuCarro.com
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Importación de fuentes (agregar en producción)
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+// Estilos generales de texto
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $gray-800;
+}
+
+// Encabezados
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-headings;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+  color: $dark;
+}
+
+h1 {
+  font-size: $font-size-base * 2.5;
+  
+  @include respond-to(md) {
+    font-size: $font-size-base * 3;
+  }
+}
+
+h2 {
+  font-size: $font-size-base * 2;
+  
+  @include respond-to(md) {
+    font-size: $font-size-base * 2.25;
+  }
+}
+
+h3 {
+  font-size: $font-size-base * 1.75;
+}
+
+h4 {
+  font-size: $font-size-base * 1.5;
+}
+
+h5 {
+  font-size: $font-size-base * 1.25;
+}
+
+h6 {
+  font-size: $font-size-base;
+}
+
+// Párrafos
+p {
+  margin-bottom: $spacing-md;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Enlaces
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: $transition-fast;
+  
+  &:hover {
+    color: darken($primary-color, 10%);
+    text-decoration: underline;
+  }
+}
+
+// Texto pequeño
+small {
+  font-size: $font-size-sm;
+}
+
+// Texto enfatizado
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+// Listas
+ul, ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-lg;
+  
+  ul, ol {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+// Bloques de código
+pre, code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: $gray-100;
+  border-radius: $border-radius;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  overflow-x: auto;
+  
+  code {
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+// Citas
+blockquote {
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-md;
+  border-left: 4px solid $primary-color;
+  background-color: $gray-100;
+  font-style: italic;
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Alineación de texto
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// Transformación de texto
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// Pesos de fuente
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}

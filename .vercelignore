@@ -1,0 +1,35 @@
+# Archivos de desarrollo
+sass/
+node_modules/
+.git/
+.vscode/
+.idea/
+
+# Archivos de configuración local
+.env.local
+.env.development
+.env.test
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Documentación de desarrollo
+README.md
+img_logo/
+
+# Archivos de configuración que no se necesitan en producción
+.gitignore
+.vercelignore
+test-build.js
+deploy.sh
+DEPLOY.md 

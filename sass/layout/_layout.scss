@@ -1,0 +1,14 @@
+@forward "header";
+@forward "footer";
+@forward "forms";
+@forward "grid";
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  background-color: transparent; // Asegurarse de que no tenga fondo
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
