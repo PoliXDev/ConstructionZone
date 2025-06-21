@@ -1,0 +1,380 @@
+/* Efectos visuales adicionales y animaciones complementarias */
+
+/* Estilos para el fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  background: inherit;
+  filter: brightness(0.7) contrast(1.2) saturate(1.1);
+}
+
+/* Efectos de neón para elementos clave */
+.neon-glow {
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.5),
+      0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Efectos de ondas en el contenedor */
+.wave-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: waveMove 3s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Efectos de texto con gradiente animado */
+.gradient-text {
+  background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff, #e0e0e0);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 3s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Efectos de hover con transformaciones 3D */
+.hover-3d {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.02);
+}
+
+/* Efectos de brillo en bordes */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff0000);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: borderGlow 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes borderGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Efectos de sombra dinámica */
+.dynamic-shadow {
+  transition: box-shadow 0.3s ease;
+}
+
+.dynamic-shadow:hover {
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Efectos de carga con skeleton */
+.skeleton-loading {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.1) 25%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: skeletonMove 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonMove {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Efectos de vibración sutil */
+.vibrate {
+  animation: vibrate 0.3s ease-in-out;
+}
+
+@keyframes vibrate {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+/* Efectos de zoom suave */
+.zoom-smooth {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zoom-smooth:hover {
+  transform: scale(1.05);
+}
+
+/* Efectos de rotación 3D */
+.rotate-3d {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.rotate-3d:hover {
+  transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Efectos de desenfoque en hover */
+.blur-hover {
+  transition: filter 0.3s ease;
+}
+
+.blur-hover:hover {
+  filter: blur(1px);
+}
+
+/* Efectos de transparencia */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efectos de slide */
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from { 
+    opacity: 0; 
+    transform: translateX(-50px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+  from { 
+    opacity: 0; 
+    transform: translateX(50px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+/* Efectos de bounce */
+.bounce-in {
+  animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Efectos de pulse */
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Efectos de shimmer */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.shimmer:hover::before {
+  left: 100%;
+}
+
+/* Efectos de glassmorphism mejorado */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Efectos de neón para texto */
+.neon-text {
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  animation: neonText 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonText {
+  0% {
+    text-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.6),
+      0 0 15px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 1),
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 40px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Efectos de scroll suave */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Efectos de carga progresiva */
+.progressive-load {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.progressive-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efectos de hover con información */
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Efectos de responsive mejorados */
+@media (max-width: 768px) {
+  .neon-text {
+    text-shadow: 
+      0 0 3px rgba(255, 255, 255, 0.8),
+      0 0 6px rgba(255, 255, 255, 0.6);
+  }
+  
+  .glass {
+    backdrop-filter: blur(10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-text {
+    text-shadow: 
+      0 0 2px rgba(255, 255, 255, 0.8),
+      0 0 4px rgba(255, 255, 255, 0.6);
+  }
+} 
