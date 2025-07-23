@@ -267,7 +267,148 @@
         color: #f0f0f0;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.5);
       }
-      
+
+      /* Estilos para la sección de contacto */
+      .contact-section {
+        width: 100%;
+        padding: 2rem;
+        margin: 2rem 0;
+        animation: fadeInUp 1.5s ease-out 0.8s both;
+      }
+
+      .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 
+          0 20px 40px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .contact-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 
+          0 30px 60px rgba(0, 0, 0, 0.4),
+          0 0 0 1px rgba(255, 255, 255, 0.2);
+      }
+
+      .contact-title {
+        color: #ffffff;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      }
+
+      .contact-description {
+        color: #ffffff;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .contact-email {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .contact-email a {
+        color: #e74c3c;
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .contact-email a:hover {
+        color: #ff6b5b;
+        text-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+      }
+
+      .contact-button-container {
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+
+      .contact-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #e74c3c;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .contact-button:hover {
+        background: #ff6b5b;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+      }
+
+      .contact-button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+      }
+
+      /* Ajustes responsive para la sección de contacto */
+      @media (max-width: 768px) {
+        .contact-section {
+          padding: 1rem;
+        }
+
+        .contact-container {
+          padding: 1.5rem;
+        }
+
+        .contact-title {
+          font-size: 1.8rem;
+        }
+
+        .contact-description {
+          font-size: 1.1rem;
+        }
+
+        .contact-email a {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-section {
+          padding: 0.5rem;
+          margin: 1rem 0;
+        }
+
+        .contact-container {
+          padding: 1rem;
+        }
+
+        .contact-title {
+          font-size: 1.5rem;
+        }
+
+        .contact-description {
+          font-size: 1rem;
+        }
+
+        .contact-email a {
+          font-size: 1.1rem;
+        }
+      }
+
       /* Loading spinner para el video */
       .video-loading {
         position: fixed;
@@ -362,8 +503,29 @@
           </div>
         </div>
       </header>
+      
+      <!-- Sección de contacto -->
+      <section class="contact-section">
+        <div class="contact-container">
+          <h2 class="contact-title">¡Contáctanos!</h2>
+          <p class="contact-description">¿Tienes un taller mecánico o una tienda de repuestos? ¡Únete a nuestra red de profesionales y amplía tu alcance!</p>
+          <p class="contact-description">Forma parte de la comunidad automotriz más grande de Venezuela</p>
+          <p class="contact-email">
+            <a href="mailto:info@reparatucarro.com">info@reparatucarro.com</a>
+          </p>
+          <div class="contact-button-container">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHogiL6rqxgzlh9tjTFXAIoAqO5FEYSswAcoy9ucMgJBHpvQ/viewform" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="contact-button">
+              Registra tu Negocio
+            </a>
+          </div>
+        </div>
+      </section>
+
       <footer class="footer">
-        <p class="footer__text">ReparatuCarro.com - Todos los derechos reservados</p>
+        <p class="footer__text">ReparatuCarro.com 2025- Todos los derechos reservados</p>
       </footer>
     </div>
     
